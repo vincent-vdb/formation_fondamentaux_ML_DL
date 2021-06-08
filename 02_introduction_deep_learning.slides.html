@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>01_introduction_deep_learning slides</title>
+<title>02_introduction_deep_learning slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -12998,13 +12998,8 @@ ul.typeahead-list  > li > a.pull-right {
 /*# sourceMappingURL=style.min.css.map */
     </style>
 <style type="text/css">
-    pre { line-height: 125%; margin: 0; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding: 0 5px 0 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px 0 5px; }
-.highlight .hll { background-color: #ffffcc }
-.highlight { background: #f8f8f8; }
+    .highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -13207,7 +13202,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Le-DEEP-LEARNING">Le DEEP LEARNING<a class="anchor-link" href="#Le-DEEP-LEARNING">&#182;</a></h1><ul>
+<h1 id="Le-Deep-Learning">Le Deep Learning<a class="anchor-link" href="#Le-Deep-Learning">&#182;</a></h1><ul>
 <li>Le machine learning est basé sur l'apprentissage.</li>
 </ul>
 <ul>
@@ -13330,7 +13325,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="La-fonction-de-perte">La fonction de perte<a class="anchor-link" href="#La-fonction-de-perte">&#182;</a></h1><ul>
+<h1 id="La-fonction-de-co&#251;t/perte-(cost/loss-function)">La fonction de co&#251;t/perte (cost/loss function)<a class="anchor-link" href="#La-fonction-de-co&#251;t/perte-(cost/loss-function)">&#182;</a></h1><ul>
 <li><p>Pour contrôler la sortie d'un réseau de neurones, vous devez pouvoir mesurer dans quelle mesure cette sortie est différente de celle que vous attendiez.</p>
 </li>
 <li><p>C’est le travail de la fonction de perte du réseau, également appelée fonction objectif.</p>
@@ -13356,7 +13351,7 @@ a.anchor-link {
 <h1 id="Fonctionnement">Fonctionnement<a class="anchor-link" href="#Fonctionnement">&#182;</a></h1><ul>
 <li><p>L'astuce fondamentale de l'apprentissage en profondeur consiste à utiliser ce score comme un signal de retour pour ajuster légèrement la valeur des poids, dans un sens qui abaissera le score de perte pour l'exemple actuel.</p>
 </li>
-<li><p>Cet ajustement est le travail de l'optimiseur, qui met en œuvre ce que l’on appelle l’algorithme <strong>Backpropagation</strong></p>
+<li><p>Cet ajustement est le travail de l'optimiseur, qui met en œuvre ce que l’on appelle l’algorithme de rétropropagation (<strong>Backpropagation</strong>)</p>
 </li>
 </ul>
 
@@ -13519,7 +13514,7 @@ a.anchor-link {
 <ul>
 <li>2011 : Dan Ciresan de l'IDSIA a commencé à remporter des concours universitaires de classification d'images avec des réseaux de neurones profonds formés par GPU</li>
 <li>2012 : groupe Hinton dans le défi annuel de la classification des images à grande échelle ImageNet. Classer les images couleur haute résolution en 1 000 catégories différentes après une formation sur 1,4 million d’images. </li>
-<li>Depuis 2012, les réseaux de neurones à convolution (convnets) sont devenus l'algorithme de référence pour toutes les tâches de vision par ordinateur.</li>
+<li>Depuis 2012, les réseaux de neurones convolutifs (convnets/CNNs) sont devenus l'algorithme de référence pour toutes les tâches de vision par ordinateur.</li>
 <li>Parallèlement, le deep learning a remplacé les SVM et les arbres de décision dans un large éventail d'applications.</li>
 </ul>
 </li>
@@ -13531,15 +13526,36 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Un-neurone">Un neurone<a class="anchor-link" href="#Un-neurone">&#182;</a></h1><p><img src="images/artificial_neuron.svg" style="width: 400px;" /></p>
-<p><br/>
-$z(\mathbf{x}) = \mathbf{w}^T \mathbf{x} + b$</p>
-<p>$f(\mathbf{x}) = g(\mathbf{w}^T \mathbf{x} + b)$</p>
-<ul>
-<li>$\mathbf{x}, f(\mathbf{x}) \,\,$    entrée et sortie</li>
-<li>$z(\mathbf{x})\,\,$    pre-activation</li>
-<li>$\mathbf{w}, b\,\,$    poids, biais</li>
-<li>$g$ fonction d'activation</li>
+<h2 id="Un-neurone-:-le-perceptron">Un neurone : le perceptron<a class="anchor-link" href="#Un-neurone-:-le-perceptron">&#182;</a></h2><p><img src="images/Perceptron_forward.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Le-r&#233;seau-de-neurones-classique-:-Multi-Layer-Perceptron">Le r&#233;seau de neurones classique : Multi Layer Perceptron<a class="anchor-link" href="#Le-r&#233;seau-de-neurones-classique-:-Multi-Layer-Perceptron">&#182;</a></h2><p><img src="images/MLP_with_activations.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Les-fonctions-d'activation">Les fonctions d'activation<a class="anchor-link" href="#Les-fonctions-d'activation">&#182;</a></h2><p><img src="images/activation_purpose.png" alt=""></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Les-principales-fonctions-d'activation">Les principales fonctions d'activation<a class="anchor-link" href="#Les-principales-fonctions-d'activation">&#182;</a></h2><ul>
+<li>sigmoid : $ sigmoid(x) = \frac{1}{1+e^{-x}} $</li>
+<li>tangente hyperbolique : $ tanh(x) = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} $</li>
+<li>ReLU (Rectifier Linear Unit) : $ relu(x) = max(0, x) $</li>
+<li>Softmax : en dernière couche d'une classification multiclasse</li>
+<li>Linéaire : en dernière couche d'une régression</li>
 </ul>
 
 </div>
@@ -13548,7 +13564,7 @@ $z(\mathbf{x}) = \mathbf{w}^T \mathbf{x} + b$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Les-r&#233;seaux-de-neurones">Les r&#233;seaux de neurones<a class="anchor-link" href="#Les-r&#233;seaux-de-neurones">&#182;</a></h2><p>Essayez de manipuler les couches de ce réseaux de neurones :</p>
+<h2 id="Les-r&#233;seaux-de-neurones">Les r&#233;seaux de neurones<a class="anchor-link" href="#Les-r&#233;seaux-de-neurones">&#182;</a></h2><p>Essayez de manipuler les couches de ce réseau de neurones :</p>
 <p><a href="https://playground.tensorflow.org/">https://playground.tensorflow.org/</a></p>
 
 </div>
@@ -13557,17 +13573,70 @@ $z(\mathbf{x}) = \mathbf{w}^T \mathbf{x} + b$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Qu'est-ce-qui-rend-l'apprentissage-en-profondeur-diff&#233;rent">Qu'est-ce qui rend l'apprentissage en profondeur diff&#233;rent<a class="anchor-link" href="#Qu'est-ce-qui-rend-l'apprentissage-en-profondeur-diff&#233;rent">&#182;</a></h1><ul>
-<li>De meilleures performances sur de nombreux problèmes.</li>
+<h2 id="Les-hyperparam&#232;tres-en-deep-learning">Les hyperparam&#232;tres en deep learning<a class="anchor-link" href="#Les-hyperparam&#232;tres-en-deep-learning">&#182;</a></h2><ul>
+<li>L'architecture : nombre de couches, de neurones par couche</li>
+<li>Les fonctions d'activation</li>
+<li>Le learning rate
+<img src="images/lr_epochs.png" alt=""></li>
 </ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Il facilite également la résolution de problèmes, car il automatise complètement ce qui était auparavant l'étape la plus cruciale d'un processus d'apprentissage automatique: le <strong>feature ingineering</strong>.</li>
+<li>Le nombre d'epochs et le batch size
+<img src="images/minibatch_vs_batch.png" alt=""></li>
 </ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>L'apprentissage en profondeur automatise complètement cette étape: avec l'apprentissage en profondeur, vous apprenez toutes les features en un seul passage plutôt que de devoir les concevoir vous-même. </li>
+<li>L'optimisation (SGB, Adam, RMSprop...)
+<img src="images/optimizers.png" alt=""></li>
 </ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Cela a grandement simplifié les flux de travail d'apprentissage automatique, remplaçant souvent des pipelines sophistiqués à plusieurs niveaux par un modèle unique, d'apprentissage en profondeur, de bout en bout.</li>
+<li>Early stopping
+<img src="images/mnist_train_and_test.png" alt=""></li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>... Et bien d'autres</li>
+</ul>
+<p>Ce qui peut rendre les réseaux de neurones difficiles à exploiter.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Qu'est-ce-qui-rend-l'apprentissage-en-profondeur-diff&#233;rent-?">Qu'est-ce qui rend l'apprentissage en profondeur diff&#233;rent ?<a class="anchor-link" href="#Qu'est-ce-qui-rend-l'apprentissage-en-profondeur-diff&#233;rent-?">&#182;</a></h1><ul>
+<li><p>De meilleures performances sur de nombreux problèmes : la traduction, la reconnaissance d'images, la reconnaissance de paroles...</p>
+</li>
+<li><p>Il facilite également la résolution de problèmes, car il automatise parfois complètement ce qui était auparavant l'étape la plus cruciale d'un processus d'apprentissage automatique : le <strong>feature engineering</strong>. C'est surtout vrai pour les données non structurées.</p>
+</li>
+<li><p>Cela a grandement simplifié les flux de travail d'apprentissage automatique, remplaçant des pipelines sophistiqués à plusieurs niveaux par un modèle unique, d'apprentissage en profondeur, de bout en bout.</p>
+</li>
 </ul>
 
 </div>
@@ -13576,10 +13645,10 @@ $z(\mathbf{x}) = \mathbf{w}^T \mathbf{x} + b$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pourquoi-l'apprentissage-en-profondeur?-Pourquoi-maintenant?">Pourquoi l'apprentissage en profondeur? Pourquoi maintenant?<a class="anchor-link" href="#Pourquoi-l'apprentissage-en-profondeur?-Pourquoi-maintenant?">&#182;</a></h1><ul>
-<li><p>Les deux idées clés de l'apprentissage en profondeur pour la vision par ordinateur - <strong>réseaux de neurones convolutionnels et rétropropagation</strong> - étaient déjà bien comprises en 1989.</p>
+<h1 id="Pourquoi-l'apprentissage-en-profondeur-?-Pourquoi-maintenant-?">Pourquoi l'apprentissage en profondeur ? Pourquoi maintenant ?<a class="anchor-link" href="#Pourquoi-l'apprentissage-en-profondeur-?-Pourquoi-maintenant-?">&#182;</a></h1><ul>
+<li><p>Les deux idées clés de l'apprentissage en profondeur pour la vision par ordinateur - <strong>réseaux de neurones convolutifs et rétropropagation</strong> - étaient déjà bien comprises en 1989.</p>
 </li>
-<li><p>L'algorithme de la mémoire à court terme (LSTM), qui est fondamental pour l'apprentissage en profondeur pour la série temporelle, a été développé en 1997 et à peine changé depuis.</p>
+<li><p>L'algorithme de la mémoire à court terme (LSTM), qui est fondamental pour l'apprentissage en profondeur pour la série temporelle, a été développé en 1997 et a peu changé depuis.</p>
 </li>
 </ul>
 <p>En général, trois forces techniques sont à l'origine des progrès de l'apprentissage automatique:</p>
@@ -13597,19 +13666,16 @@ $z(\mathbf{x}) = \mathbf{w}^T \mathbf{x} + b$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Mat&#233;riel">Mat&#233;riel<a class="anchor-link" href="#Mat&#233;riel">&#182;</a></h1><ul>
-<li>Entre 1990 et 2010, les processeurs standard ont été multipliés par 5 000 environ. En conséquence, il est maintenant possible </li>
-</ul>
-<ul>
-<li>Au cours des années 2000, des sociétés telles que NVIDIA et AMD ont investi des milliards de dollars dans le développement de puces massivement parallèles rapides (unités de traitement graphique GPU) pour alimenter les graphismes de jeux vidéo.</li>
-</ul>
-<ul>
-<li>Cet investissement a profité à la communauté scientifique lorsque, en 2007, NVIDIA a lancé CUDA, une interface de programmation pour sa gamme de GPU. </li>
-</ul>
-<ul>
-<li>Un petit nombre de GPU ont commencé à remplacer des grappes massives de processeurs dans diverses applications hautement parallélisables. </li>
-</ul>
-<ul>
-<li>Les réseaux neuronaux profonds, constitués principalement de nombreuses multiplications de petites matrices, sont également hautement parallélisables; et vers 2011, certains chercheurs ont commencé à écrire des implémentations CUDA de réseaux de neurones.</li>
+<li><p>Entre 1990 et 2010, les processeurs standard ont été multipliés par 5 000 environ.</p>
+</li>
+<li><p>Au cours des années 2000, des sociétés telles que NVIDIA et AMD ont investi des milliards de dollars dans le développement de puces massivement parallèles rapides (unités de traitement graphique GPU) pour alimenter les graphismes de jeux vidéo.</p>
+</li>
+<li><p>Cet investissement a profité à la communauté scientifique lorsque, en 2007, NVIDIA a lancé CUDA, une interface de programmation pour sa gamme de GPU.</p>
+</li>
+<li><p>Un petit nombre de GPU ont commencé à remplacer des grappes massives de processeurs dans diverses applications hautement parallélisables.</p>
+</li>
+<li><p>Les réseaux neuronaux profonds, constitués principalement de nombreuses multiplications de petites matrices, sont également hautement parallélisables; et vers 2011, certains chercheurs ont commencé à écrire des implémentations CUDA de réseaux de neurones.</p>
+</li>
 </ul>
 
 </div>
@@ -13618,10 +13684,17 @@ $z(\mathbf{x}) = \mathbf{w}^T \mathbf{x} + b$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Les-donn&#233;es">Les donn&#233;es<a class="anchor-link" href="#Les-donn&#233;es">&#182;</a></h1><p>En ce qui concerne les données, en plus des progrès exponentiels du matériel de stockage au cours des 20 dernières années, le jeu a été révolutionné grâce à Internet, ce qui permet de collecter et de distribuer de très grands ensembles de données pour l'apprentissage automatique.</p>
-<p>Aujourd’hui, les grandes entreprises travaillent avec des jeux de données d’image, des jeux de données vidéo et des jeux de données en langage naturel qui n’auraient pas pu être collectés sans Internet.</p>
-<p>Les tags d'image générés par les utilisateurs sur Flickr, par exemple, ont constitué un trésor de données pour la vision par ordinateur. Il en va de même pour les vidéos YouTube. Et Wikipedia est un ensemble de données clé pour le traitement en langage naturel.</p>
-<p>Si un jeu de données a joué un rôle catalyseur dans l’apprentissage en profondeur, c’est le jeu de données ImageNet, constitué de 1,4 million d’images annotées à la main avec 1 000 catégories d’images (1 catégorie par image). Mais ce qui rend ImageNet spécial, ce n’est pas seulement sa grande taille, mais aussi la compétition annuelle qui lui est associée.</p>
+<h1 id="Les-donn&#233;es">Les donn&#233;es<a class="anchor-link" href="#Les-donn&#233;es">&#182;</a></h1><ul>
+<li>En ce qui concerne les données, en plus des progrès exponentiels du matériel de stockage au cours des 20 dernières années, le jeu a été révolutionné grâce à Internet, ce qui permet de collecter et de distribuer de très grands ensembles de données pour l'apprentissage automatique. </li>
+</ul>
+<ul>
+<li><p>Aujourd’hui, les grandes entreprises travaillent avec des jeux de données d’image, des jeux de données vidéo et des jeux de données en langage naturel qui n’auraient pas pu être collectés sans Internet.</p>
+</li>
+<li><p>Les tags d'image générés par les utilisateurs sur Flickr, par exemple, ont constitué un trésor de données pour la vision par ordinateur. Il en va de même pour les vidéos YouTube. Et Wikipedia est un ensemble de données clé pour le traitement en langage naturel.</p>
+</li>
+<li><p>Si un jeu de données a joué un rôle catalyseur dans l’apprentissage en profondeur, c’est le jeu de données ImageNet, constitué de 1,4 million d’images annotées à la main avec 1 000 catégories d’images (1 catégorie par image). Mais ce qui rend ImageNet spécial, ce n’est pas seulement sa grande taille, mais aussi la compétition annuelle qui lui est associée.</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -13632,11 +13705,11 @@ $z(\mathbf{x}) = \mathbf{w}^T \mathbf{x} + b$</p>
 <h1 id="Algorithmes">Algorithmes<a class="anchor-link" href="#Algorithmes">&#182;</a></h1><p>La question clé était celle de la propagation du gradient à travers des piles de couches profondes. Le signal de retour utilisé pour former les réseaux de neurones disparaîtrait avec l’augmentation du nombre de couches.</p>
 <p>Cela a changé vers 2009-2010 avec l'avènement de plusieurs améliorations algorithmiques simples mais importantes qui ont permis une meilleure propagation du gradient:</p>
 <ul>
-<li>De meilleures fonctions d'activation pour les couches neurales</li>
-<li>Amélioration des schémas d'initialisation du poids, à commencer par la formation préalable par couches, qui a été rapidement abandonnée</li>
+<li>De meilleures fonctions d'activation, non saturantes</li>
+<li>Amélioration des schémas d'initialisation du poids</li>
 <li>De meilleurs schémas d'optimisation, tels que RMSProp et Adam</li>
 </ul>
-<p>Enfin, en 2014, 2015 et 2016, des méthodes encore plus avancées d'aide à la propagation du gradient ont été découvertes, telles que la normalisation par lots, les connexions résiduelles et les convolutions séparables en profondeur. Aujourd'hui, nous pouvons former à partir de zéro des modèles d'une profondeur de milliers de couches.</p>
+<p>Enfin, en 2014, 2015 et 2016, des méthodes encore plus avancées d'aide à la propagation du gradient ont été découvertes, telles que la normalisation par lots (batch normalization), les connexions résiduelles (residual network), le dropout... Aujourd'hui, nous pouvons former à partir de zéro des modèles d'une profondeur de milliers de couches.</p>
 
 </div>
 </div>
@@ -13650,10 +13723,10 @@ $z(\mathbf{x}) = \mathbf{w}^T \mathbf{x} + b$</p>
 <ul>
 <li><p>Les données que vous manipulerez tomberont presque toujours dans l’une des catégories suivantes:</p>
 <ul>
-<li>Données vectorielles— Tenseurs de forme 2D</li>
-<li>Données de série temporelle ou données de séquence - tenseurs de forme 3D</li>
-<li>Images— Tenseurs de forme 4D</li>
-<li>Vidéo - Tenseurs de forme 5D</li>
+<li>Données vectorielles : Tenseurs de forme 2D</li>
+<li>Données de série temporelle ou données de séquence : tenseurs de forme 3D</li>
+<li>Images : Tenseurs de forme 4D</li>
+<li>Vidéo : Tenseurs de forme 5D</li>
 </ul>
 </li>
 </ul>
@@ -13750,12 +13823,10 @@ $z(\mathbf{x}) = \mathbf{w}^T \mathbf{x} + b$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Processus-de-d&#233;veloppement-d'un-mod&#232;le-de-deep-learning-avec-Keras">Processus de d&#233;veloppement d'un mod&#232;le de deep learning avec Keras<a class="anchor-link" href="#Processus-de-d&#233;veloppement-d'un-mod&#232;le-de-deep-learning-avec-Keras">&#182;</a></h1><ol>
-<li>Définissez vos données d’entraînement: tenseur d’entrée et tenseur de cible.</li>
-</ol>
-<ol>
-<li>Définissez un réseau de couches (ou un modèle) qui mappe vos entrées sur vos cibles.</li>
-</ol>
-<ol>
+<li><p>Définissez vos données d’entraînement: tenseur d’entrée et tenseur de cible.</p>
+</li>
+<li><p>Définissez un réseau de couches (ou un modèle) qui mappe vos entrées sur vos cibles.</p>
+</li>
 <li><p>Configurez le processus d'apprentissage en choisissant une fonction de perte, un optimiseur et certaines mesures à surveiller.</p>
 </li>
 <li><p>Itérez sur vos données d'entraînement en appelant la méthode fit () de votre modèle.</p>
